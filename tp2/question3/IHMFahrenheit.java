@@ -30,10 +30,13 @@ public class IHMFahrenheit extends JFrame implements ActionListener{
    * remarquer que le champs de droite (les degrés Celsius) n'est pas éditable.
    * @param ae l'événement transmis
    */
-  public void actionPerformed( ActionEvent ae ){
+ public void actionPerformed( ActionEvent ae ){
     try{
-      int fahrenheit = 0; // valeur est une String et doit être convertie en entier, voir java.lang.Integer méthode parseInt (--> try/catch)
-      float celsius = 0F; // à compléter, en appelant la méthode ad'hoc de la question2 
+        
+        String t=entree.getText();
+      int fahrenheit =Integer.parseInt(t); // valeur est une String et doit être convertie en entier, voir java.lang.Integer méthode parseInt (--> try/catch)
+      float celsius = FahrenheitCelsius.fahrenheitEnCelsius(fahrenheit); // à compléter, en appelant la méthode ad'hoc de la question2 
+      if(celsius<-273.1){celsius=-273.1f;}
       // un test ici pour le zéro absolu (-273.1)
 
       sortie.setText( Float.toString( celsius));
